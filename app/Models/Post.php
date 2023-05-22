@@ -13,6 +13,5 @@ class Post extends Model
         'title',
         'content',
         'thumb',
-        'slug'
     ];
 }

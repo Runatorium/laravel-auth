@@ -29,7 +29,6 @@ class PostController extends Controller
                 'title' => 'required|max:15',
                 'content' => 'nullable|max:300',
                 'thumb' => 'nullable|max:300',
-                'slug' => 'nullable|max:25',
             ]
         );
         $form_data = $request->all();
@@ -37,7 +36,7 @@ class PostController extends Controller
         $newPost->fill($form_data);
         $newPost->save();
 
-        return redirect()->route('admin.posts.post');
+        return redirect()->route('admin.posts.index');
     }
 
 
@@ -63,7 +62,6 @@ class PostController extends Controller
                 'title' => 'required|15',
                 'content' => 'nullable|300',
                 'thumb' => 'nullable|300',
-                'slug' => 'nullable|25',
             ]
         );
         $form_data = $request->all();
