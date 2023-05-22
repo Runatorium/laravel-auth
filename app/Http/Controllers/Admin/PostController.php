@@ -24,7 +24,20 @@ class PostController extends Controller
 
     public function store(Request $request)
     {
-        //
+        $request->validate(
+            [
+                'title' => 'required|max:15',
+                'content' => 'nullable|max:300',
+                'thumb' => 'nullable|max:300',
+                'slug' => 'nullable|max:25',
+            ]
+        );
+        $form_data = $request->all();
+        $newPost = new Post();
+        $newPost->fill($form_data);
+        $newPost->save();
+
+        return redirect()->route('admin.posts.post');
     }
 
 

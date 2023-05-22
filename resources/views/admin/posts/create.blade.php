@@ -1,7 +1,7 @@
 @vite(['resources/css/app.css', 'resources/js/app.js'])
 
 <main>
-    <form method="POST" action="{{ route('admin.posts.index') }}">
+    <form method="POST" action="{{ route('admin.posts.store') }}">
 
         @csrf
 
