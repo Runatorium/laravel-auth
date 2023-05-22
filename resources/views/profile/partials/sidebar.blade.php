@@ -9,6 +9,12 @@
             </svg>
             Dashboard
         </a>
+        <a href="{{ route('admin.posts.index') }}" class="nav-link active mt-2" aria-current="page">
+            <svg class="bi pe-none me-2" width="16" height="16">
+                <use xlink:href="#home"></use>
+            </svg>
+            Posts
+        </a>
     </li>
 </ul>
 <hr>
