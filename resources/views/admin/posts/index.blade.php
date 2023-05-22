@@ -19,6 +19,13 @@
                     <a href="{{ route('admin.posts.show', ['post' => $post->id]) }}"><button
                             class="btn btn-primary">vedi</button></a>
                 </td>
+                <td>
+                    <form action="{{ route('admin.posts.destroy', ['post' => $post->id]) }}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-secondary mt-2 w-100">Eliminia</button>
+                    </form>
+                </td>
             </tr>
         @endforeach
     </table>

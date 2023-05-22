@@ -15,6 +15,12 @@
             </svg>
             Posts
         </a>
+        <a href="{{ route('admin.posts.create') }}" class="nav-link active mt-2" aria-current="page">
+            <svg class="bi pe-none me-2" width="16" height="16">
+                <use xlink:href="#home"></use>
+            </svg>
+            Crea Post
+        </a>
     </li>
 </ul>
 <hr>

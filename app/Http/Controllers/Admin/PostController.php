@@ -18,7 +18,7 @@ class PostController extends Controller
 
     public function create()
     {
-        //
+        return view('admin.posts.create');
     }
 
 
@@ -41,14 +41,29 @@ class PostController extends Controller
     }
 
 
-    public function update(Request $request, Post $post)
+    public function update(Request $request, $id)
     {
-        //
+        $post = Post::findOrFail($id);
+
+        $request->validate(
+            [
+                'title' => 'required|15',
+                'content' => 'nullable|300',
+                'thumb' => 'nullable|300',
+                'slug' => 'nullable|25',
+            ]
+        );
+        $form_data = $request->all();
+        $post->update($form_data);
+
+        return redirect()->route('admin.posts.index');
     }
 
 
-    public function destroy(Post $post)
+    public function destroy($id)
     {
-        //
+        $post = Post::findOrFail($id);
+        $post->delete();
+        return redirect()->route('admin.posts.index');
     }
 }
